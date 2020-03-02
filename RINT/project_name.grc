@@ -1,0 +1,37 @@
+﻿/* *****************************************************************************
+// Localizable resource description for the project_name Add-On
+// API Development Kit 22; Mac/Win
+//
+// Namespaces:			Contact person:
+//		-None-
+//
+// [SG compatible] - Yes
+// ****************************************************************************/
+
+#include "project_nameResIDs.hpp"
+
+'STR#' PROJECT_NAME_ABOUT_STRINGSID "Add-on Name and Description" {
+/* [  1] */		"project_name"
+/* [  2] */		"New Add-on Template"
+}
+
+
+/* Text appearing in the menu
+	-- same as the name of the folder without underscore(s) */
+
+'STR#' PROJECT_NAME_MENU_STRINGSID "Strings for the Menu" {
+/* [   ] */		"project_name"
+/* [  1] */			"Example Dropdown..."
+}
+
+/* Localizable dialog resource(s) with the accompanying help resource(s) */
+
+'GDLG' 32500  Modal			 40	   0  504  400		"Example Window" {
+/* [  1] */ Button			412  372   70   20		LargePlain	"OK"
+/* [  2] */ Button			332  372   70   20		LargePlain	"Cancel"
+}
+
+'DLGH'  32500  DLG_32500_PROJECT_NAME {
+1	""							Button_0
+2	""							Button_1
+}
