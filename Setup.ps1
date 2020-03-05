@@ -129,3 +129,5 @@ Rename-Item -Path "RFIX.win/project_name.rc2"           -NewName "${newProjectNa
 Rename-Item -Path "RFIX/project_nameFix.grc"            -NewName "${newProjectName}Fix.grc"
 
 Write-Output "Successful setup complete!"
+
+Read-Host -Prompt "Press any key to quit:"
