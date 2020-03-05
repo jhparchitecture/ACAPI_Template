@@ -58,7 +58,7 @@ else
 
 if ((Test-Path "C:\Program Files\GRAPHISOFT\API Development Kit 22.3004\Support") -eq 1)
 {
-    $supportPath22 = "C:\Program Files\GRAPHISOFT\API Development Kit 23.3006\Support"
+    $supportPath22 = "C:\Program Files\GRAPHISOFT\API Development Kit 22.3004\Support"
     Write-Output "Archicad 22 Support path found: ${supportPath22}"
 }
 else 
