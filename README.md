@@ -1,4 +1,3 @@
 # ACAPI_Template
- Template for creating Archicad addons.
+ Template for creating Archicad 23 addons.
  
- Branches indicate the currently supported Archicad versions.
