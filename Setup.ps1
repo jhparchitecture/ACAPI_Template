@@ -70,16 +70,6 @@ $files =    ".gitignore",
             ".vscode/settings.json",
             ".vscode/tasks.json"
 
-foreach ($file in $files)
-{
-    if ((Test-Path $file) -eq 1)
-    {
-        
-        ((Get-Content -Path $file -Raw).Replace('project_name', $newProjectName)) | Set-Content -Path $file
-        ((Get-Content -Path $file -Raw).Replace('PROJECT_NAME', $newProjectName.ToUpper())) | Set-Content -Path $file
-    } 
-}
-
 Write-Output "Opening Archicad Developer page now..."
 Invoke-Expression "start https://archicadapi.graphisoft.com/profile/developer"
 $developerID = Read-Host -Prompt "Please copy 9-digit ID and enter"
@@ -105,6 +95,16 @@ if ($addOnID -match '[0-9]' -and $addOnID.Length -eq 10)
 else 
 {
     Write-Output "ERROR: Add-On ID is invalid, skipping replace. Please replace 'yyyyyyyyyy' in 'RFIX/project_nameFix.grc' with a valid Add-On ID before building..."
+}
+
+foreach ($file in $files)
+{
+    if ((Test-Path $file) -eq 1)
+    {
+        
+        ((Get-Content -Path $file -Raw).Replace('project_name', $newProjectName)) | Set-Content -Path $file
+        ((Get-Content -Path $file -Raw).Replace('PROJECT_NAME', $newProjectName.ToUpper())) | Set-Content -Path $file
+    } 
 }
 
 Rename-Item -Path "project_name.vcxproj"                -NewName "${newProjectName}.vcxproj"
