@@ -45,17 +45,6 @@ if ($newProjectName -eq "" -or $newProjectName -match $RegEx)
     Write-Output "ERROR: Invalid file name, exiting..."
 }
 
-if ((Test-Path "C:\Program Files\GRAPHISOFT\API Development Kit 23.3006\Support") -eq 1)
-{
-    $supportPath23 = "C:\Program Files\GRAPHISOFT\API Development Kit 23.3006\Support"
-    Write-Output "Archicad 23 Support path found: ${supportPath23}"
-}
-else 
-{
-    Write-Output "Support path not found, please ensure API Dev Kit 23.3006 is installed to C:\Program Files\GRAPHISOFT\ ."
-    exit
-}
-
 if ((Test-Path "C:\Program Files\GRAPHISOFT\API Development Kit 22.3004\Support") -eq 1)
 {
     $supportPath22 = "C:\Program Files\GRAPHISOFT\API Development Kit 22.3004\Support"
@@ -90,9 +79,6 @@ foreach ($file in $files)
         ((Get-Content -Path $file -Raw).Replace('PROJECT_NAME', $newProjectName.ToUpper())) | Set-Content -Path $file
     } 
 }
-
-
-
 
 Write-Output "Opening Archicad Developer page now..."
 Invoke-Expression "start https://archicadapi.graphisoft.com/profile/developer"
