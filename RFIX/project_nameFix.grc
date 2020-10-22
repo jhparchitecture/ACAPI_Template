@@ -8,7 +8,7 @@
 // [SG compatible] - Yes
 // ****************************************************************************/
 
-#include "MDIDs_APICD.h"
+#include "project_nameResIDs.hpp"
 'MDID' 32500 "Add-On Identifier" {
 
 	//9-digit Author Developer ID:
