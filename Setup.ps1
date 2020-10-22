@@ -56,17 +56,6 @@ else
     exit
 }
 
-if ((Test-Path "C:\Program Files\GRAPHISOFT\API Development Kit 22.3004\Support") -eq 1)
-{
-    $supportPath22 = "C:\Program Files\GRAPHISOFT\API Development Kit 22.3004\Support"
-    Write-Output "Archicad 22 Support path found: ${supportPath22}"
-}
-else 
-{
-    Write-Output "Archicad 22 Support path not found, please ensure API Dev Kit 22.3004 is installed to C:\Program Files\GRAPHISOFT\ ."
-    exit
-}
-
 #checkMsbuild only need to check this if planning on using vscode...
 checkGit
 
@@ -95,8 +84,8 @@ else
     Write-Output "ERROR: Developer ID is invalid, skipping replace. Please replace 'xxxxxxxxx' in 'RFIX/project_nameFix.grc' with a valid Developer ID before building..."
 }
 
-Write-Output "Opening AddOnAdmin.exe to retrieve Add-On ID..."
-& "${supportPath22}\Tools\Win\AddOn Management\AddOnAdmin.exe"
+Write-Output "Opening Archicad Developer Add-ons to retrieve Add-On ID..."
+Invoke-Expression "start https://archicadapi.graphisoft.com/profile/add-ons"
 $addOnID = Read-Host -Prompt "Please create and enter 10-digit Add-On ID"
 
 
