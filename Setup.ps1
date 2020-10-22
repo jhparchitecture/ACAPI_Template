@@ -83,8 +83,8 @@ else
     Write-Output "ERROR: Developer ID is invalid, skipping replace. Please replace 'xxxxxxxxx' in 'RFIX/project_nameFix.grc' with a valid Developer ID before building..."
 }
 
-Write-Output "Opening AddOnAdmin.exe to retrieve Add-On ID..."
-& "${supportPath22}\Tools\Win\AddOn Management\AddOnAdmin.exe"
+Write-Output "Opening Archicad Developer Add-ons page now to retrieve Add-On ID..."
+Invoke-Expression "start https://archicadapi.graphisoft.com/profile/add-ons"
 $addOnID = Read-Host -Prompt "Please create and enter 10-digit Add-On ID"
 
 
