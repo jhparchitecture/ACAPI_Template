@@ -45,14 +45,14 @@ if ($newProjectName -eq "" -or $newProjectName -match $RegEx)
     Write-Output "ERROR: Invalid file name, exiting..."
 }
 
-if ((Test-Path "C:\Program Files\GRAPHISOFT\API Development Kit 23.3006\Support") -eq 1)
+if ((Test-Path "C:\Program Files\GRAPHISOFT\API Development Kit 24.3009\Support") -eq 1)
 {
-    $supportPath23 = "C:\Program Files\GRAPHISOFT\API Development Kit 23.3006\Support"
-    Write-Output "Archicad 23 Support path found: ${supportPath23}"
+    $supportPath23 = "C:\Program Files\GRAPHISOFT\API Development Kit 24.3009\Support"
+    Write-Output "Archicad 24 Support path found: ${supportPath23}"
 }
 else 
 {
-    Write-Output "Support path not found, please ensure API Dev Kit 23.3006 is installed to C:\Program Files\GRAPHISOFT\ ."
+    Write-Output "Support path not found, please ensure API Dev Kit 24.3009 is installed to C:\Program Files\GRAPHISOFT\ ."
     exit
 }
 
